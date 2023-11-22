@@ -19,6 +19,16 @@ spec:
         params:
           - name: source-url
           - name: source-revision
+        stepTemplate:
+          securityContext:
+            allowPrivilegeEscalation: false
+            runAsUser: 1000
+            runAsNonRoot: true
+            capabilities:
+              drop:
+                - ALL
+            seccompProfile:
+              type: RuntimeDefault
         steps:
           - name: test
             image: projects.registry.vmware.com/tanzu_adv_eng/gradle@sha256:fdb628563dde15aebb58ea90d179247e8c24fd25df5f267db33a7250fbe9c8b8
