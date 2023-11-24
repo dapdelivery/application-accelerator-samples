@@ -22,7 +22,7 @@ spec:
         stepTemplate:
           securityContext:
             allowPrivilegeEscalation: false
-            runAsUser: 0
+            runAsUser: 100
             runAsNonRoot: true
             capabilities:
               drop:
